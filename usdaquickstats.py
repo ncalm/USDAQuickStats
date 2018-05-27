@@ -1,5 +1,5 @@
 import requests
-
+import os
 
 class USDAQuickStats:
 
@@ -10,7 +10,7 @@ class USDAQuickStats:
         self.urlgetparams = "http://quickstats.nass.usda.gov" \
                             "/api/get_param_values/"
         self.getparams = {}
-        self.getparams["key"] = ""
+        self.getparams["key"] = os.environ["USDA_API_KEY"]
         self.getparams["source_desc"] = None
         self.getparams["group_desc"] = None
         self.getparams["commodity_desc"] = None
